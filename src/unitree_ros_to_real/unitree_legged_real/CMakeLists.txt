@@ -35,6 +35,15 @@ add_library(${PROJECT_NAME}
     src/utils/FiltFilt.cpp
     src/utils/ImuEstimator.cpp
     src/utils/textfileparser.cpp
+
+    src/utils/Jp_FLfoot.cpp 
+    src/utils/Jp_FRfoot.cpp
+    src/utils/Jp_RLfoot.cpp 
+    src/utils/Jp_RRfoot.cpp
+    src/utils/De_a1.cpp
+    src/utils/Ce_a1.cpp
+    src/utils/Be_a1.cpp
+    src/utils/Ge_a1.cpp
 )
 
 

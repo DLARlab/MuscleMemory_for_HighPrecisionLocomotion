@@ -82,16 +82,16 @@ void FirstlastDetect(int (&flag_st)[4], int (&flag_fly)[4], int (&Foot_force)[4]
 {
   float a, b;
     
-      if (Foot_force[0] > 20){
+      if (Foot_force[0] > 50){
         trigger_forceR = Foot_force[0];
       }
-      else if (Foot_force[1] > 20){
+      else if (Foot_force[1] > 50){
         trigger_forceR = Foot_force[1];
       }
-      else if (Foot_force[2] > 20){
+      else if (Foot_force[2] > 50){
         trigger_forceR = Foot_force[2];
       }
-      else if (Foot_force[3] > 20){
+      else if (Foot_force[3] > 50){
         trigger_forceR = Foot_force[3];
       }
       else {
@@ -105,7 +105,7 @@ void FirstlastDetect(int (&flag_st)[4], int (&flag_fly)[4], int (&Foot_force)[4]
         trigger_forceF =  std::min(a, b);
       }
       else {
-        trigger_forceF = Foot_force[1];
+        trigger_forceF = Foot_force[3];
       }
       
     

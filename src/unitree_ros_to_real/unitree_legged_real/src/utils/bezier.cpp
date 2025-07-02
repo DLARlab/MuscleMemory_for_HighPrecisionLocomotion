@@ -56,16 +56,16 @@ float fcn_bezier(Eigen::MatrixXf coeff, float t_norminal)
      return fcn;
 }
 
-Eigen::Matrix<float,5,1> diff_coeff(Eigen::Matrix<float,6,1> coeff_d)
-{
-  int M = 5;
-  Eigen::Matrix<float,5,6> A;
-  Eigen::Matrix<float,6,5> At;
-  Eigen::Matrix<float,1,5> dcoefft;
-  Eigen::Matrix<float,5,1> dcoeff;
 
-     for (int i = 0; i < 5; i++){
-       for (int j = 0; j < 6; j++){
+Eigen::VectorXf diff_coeff(const Eigen::VectorXf& coeff_d) 
+{
+  int M = coeff_d.rows()-1;
+  Eigen::MatrixXf A(M, M + 1);  // Dynamic size matrix
+  Eigen::MatrixXf At(M + 1, M);
+  Eigen::MatrixXf dcoefft(1, M);
+  Eigen::MatrixXf dcoeff(M , 1);
+     for (int i = 0; i < M; i++){
+       for (int j = 0; j < M + 1; j++){
          A(i,j) = 0.0;
        }
      }
@@ -95,4 +95,20 @@ float fcn_dbezier(Eigen::Matrix<float,6,1> coeff_d,float t_norminal)
   dfcn = fcn_bezier(dcoeff, t_norminal);
   
   return dfcn;
+}
+
+float fcn_d2bezier(Eigen::VectorXf coeff_d,float t_norminal)
+{
+  Eigen::Matrix<float,5,1> dcoeff;
+  Eigen::Matrix<float,4,1> d2coeff;
+  float dfcn;
+  float d2fcn;
+  
+  dfcn = 0.0;
+  d2fcn = 0.0;
+  dcoeff = diff_coeff(coeff_d);
+  d2coeff = diff_coeff(dcoeff);
+  d2fcn = fcn_bezier(d2coeff, t_norminal);
+  
+  return d2fcn;
 }
