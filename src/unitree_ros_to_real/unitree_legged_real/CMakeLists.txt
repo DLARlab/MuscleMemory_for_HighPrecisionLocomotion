@@ -34,7 +34,6 @@ add_library(${PROJECT_NAME}
     src/utils/Filt.cpp
     src/utils/FiltFilt.cpp
     src/utils/ImuEstimator.cpp
-    src/utils/KalmanFilter.cpp
     src/utils/textfileparser.cpp
 )
 
