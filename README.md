@@ -106,7 +106,7 @@ netmask 255.255.255.0
 Where the port name has to be changed to your own.
 
 # Run the package
-You can control your real robot(only A1 and Aliengo) from ROS by this package.
+You can control your real robot from ROS by this package.
 
 First you have to run the `real_launch` under root account:
 ```
