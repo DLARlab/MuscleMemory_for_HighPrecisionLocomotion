@@ -1,0 +1,1 @@
+float clamp(float a,  float lim1, float lim2);

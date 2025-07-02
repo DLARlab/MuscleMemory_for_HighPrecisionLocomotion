@@ -1,0 +1,6 @@
+param_hip_Kp: 35
+param_hip_Kd: 3
+param_thigh_Kp: 90
+param_thigh_Kd: 3
+param_calf_Kp: 130
+param_calf_Kd: 5
