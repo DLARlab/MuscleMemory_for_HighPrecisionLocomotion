@@ -23,7 +23,7 @@ This project was initially developed at Syracuse University (Dynamic Locomotion 
 
 ## Publications
 
-This work has been submitted to the International Journal of Robotics Research(IJRR).
+This work has been submitted to the Robotica.
 
 If you use this work in an academic context, please cite the following publication:
 
